@@ -21,9 +21,13 @@ pipeline {
                 '''
             }
         }
-        stage('Dummy1') {
+        stage('Ansible to Configure DB and Web Server') {
             steps {
-                echo 'Hello World'
+                sh '''
+                echo "Running Ansible Command"
+                cd ansibleinfracm
+                ansible-playbook playbook.yml -i inventory
+                '''
             }
         }
         stage('Dummy2') {
