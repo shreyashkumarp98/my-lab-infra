@@ -6,6 +6,7 @@ pipeline {
             steps {
                 echo 'Cloning the Code from Git'
                 git branch:'main', url: 'https://github.com/nishanthkumarpathi/my-lab-infra.git'
+            }
         }
         stage('Provision the Terraform Infra') {
             steps {
